@@ -1,19 +1,5 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-
-df = pd.read_csv("Data.csv")
-
-#convert the date columns
-df["date"] = pd.to_datetime(df["date"], errors="coerce")
-
-#available utility columns with display names
-utilities = {
-    "1": ("Electricity", "elec_use_kwh", "kWh"),
-    "2": ("Natural Gas", "nat_gas_use_mcf", "MCF"),
-    "3": ("Steam", "steam_use_klbs", "thousand pounds"),
-    "4": ("Water", "water_use_kgal", "thousand gallons"),
-    "5": ("Wastewater", "wastewater_use_kgal", "thousand gallons")
-}
+from data_loader import df, utilities
 
 #print available locations
 locations = sorted(df["location"].dropna().unique())
