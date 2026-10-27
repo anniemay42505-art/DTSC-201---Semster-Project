@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from data_loader import df, utilities
+from data_loader import df, utilities, month_names, display_options
 
 
 #get avalilable years and locations
@@ -23,13 +23,6 @@ def get_choice(options, prompt):
                 return options[choice - 1]
 
         print("Invalid choice. Please enter a number from the menu.")
-
-
-#list of options
-def display_options(options):
-    for number, option in enumerate(options, start=1):
-        print(f"{number}. {option}")
-
 
 #compare two locations
 while True:
@@ -117,13 +110,6 @@ while True:
     ):
         print("No consumption data is available for either location.")
         continue
-
-    #missing months for each location
-    month_names = [
-        "January", "February", "March", "April",
-        "May", "June", "July", "August",
-        "September", "October", "November", "December"
-    ]
 
     for location, totals in monthly_totals.items():
         missing_months = [

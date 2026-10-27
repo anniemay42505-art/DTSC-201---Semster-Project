@@ -1,24 +1,23 @@
 import matplotlib.pyplot as plt
-from data_loader import df, utilities
+from data_loader import df, utilities, month_names, display_options
 
 #print available locations
 locations = sorted(df["location"].dropna().unique())
 
-print("AVAILABLE LOCATIONS")
-for location in locations:
-    print(location)
+#print("AVAILABLE LOCATIONS")
+#display_options(locations)
 
 #print available years
 years = sorted(df["date"].dropna().dt.year.unique())
 
-print("\nAVAILABLE YEARS")
-for year in years:
-    print(year)
+#print("\nAVAILABLE YEARS")
+#for year in years:
+#    print(year)
 
 #print available utilities
-print("\nAVAILABLE UTILITIES")
-for number, utility in utilities.items():
-    print(number + ".", utility[0])
+#print("\nAVAILABLE UTILITIES")
+#for number, utility in utilities.items():
+#    print(number + ".", utility[0])
 
 
 # user selections
@@ -26,8 +25,8 @@ for number, utility in utilities.items():
 while True:
 
     print("\nSELECT A LOCATION")
-    for number, location in enumerate(locations, start=1):
-        print(f"{number}. {location}")
+
+    print(display_options(locations))
 
     location_choice = int(input("\nEnter the number of your location: "))
 
@@ -134,11 +133,6 @@ while True:
 
                         print(f"Months with data: {len(valid_months)} out of 12")
 
-                        month_names = [
-                            "January", "February", "March", "April",
-                            "May", "June", "July", "August",
-                            "September", "October", "November", "December"
-                        ]
                         if missing_months:
                             missing_names = [
                                 month_names[month - 1]
