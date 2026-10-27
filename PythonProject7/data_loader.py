@@ -25,7 +25,7 @@ def display_options(options, columns=3):
     rows = (len(options) + columns - 1) // columns
 
     # Find the width needed for each column
-    width = max(len(option) for option in options) + 8
+    width = max(len((str(option))) for option in options) + 8
 
     #options down each column
     for row in range(rows):
@@ -35,7 +35,7 @@ def display_options(options, columns=3):
             if index < len(options):
                 number = index + 1
                 print(
-                    f"{number}. {options[index]:<{width - 5}}",
+                    f"{number}. {str(options[index]):<{width - 5}}",
                     end=""
                 )
 
