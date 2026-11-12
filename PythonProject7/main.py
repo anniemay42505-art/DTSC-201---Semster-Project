@@ -1,6 +1,8 @@
 import subprocess
 import sys
 
+
+#next steps: fix issues with comparison, simple gui, seasonal data
 while True:
     print("\n=== Municipal Utility Analysis ===")
     print("1. Analyze one building")

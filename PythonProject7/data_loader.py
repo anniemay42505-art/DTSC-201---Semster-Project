@@ -14,6 +14,13 @@ utilities = {
     "4": ("Water", "water_use_kgal", "thousand gallons"),
     "5": ("Wastewater", "wastewater_use_kgal", "thousand gallons")
 }
+#season names for graphs
+seasons = {
+    "Fall": ("October", "September", "November"),
+    "Winter": ("December", "January", "February"),
+    "Summer": ("June","July", "August"),
+    "Spring": ("March", "April", "May")
+}
 #month names for graphs
 month_names = [
     "January", "February", "March", "April",

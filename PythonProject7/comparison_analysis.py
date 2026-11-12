@@ -53,6 +53,8 @@ while True:
     utility_key = utility_choices[int(utility_number) - 1]
     utility_name, utility_column, unit = utilities[utility_key]
 
+#fix greater building vs lesser building
+
     #location 1
     print("\nAvailable locations:")
     display_options(available_locations)
